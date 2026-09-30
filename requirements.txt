@@ -1,0 +1,15 @@
+pandas
+pydantic
+psycopg2-binary
+psycopg[binary]
+supabase
+google-genai
+pdf2image
+sqlglot
+thefuzz
+python-dateutil
+reportlab
+openai
+sqlalchemy
+
+python-dotenv
