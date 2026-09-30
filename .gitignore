@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==============================
+# Projeto Gestão de Despesas
+# ==============================
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+!.env.example
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Arquivos temporários do Jupyter/Colab
+.ipynb_checkpoints/
+
+# Relatórios gerados durante a execução
+outputs/
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
