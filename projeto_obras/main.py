@@ -19,27 +19,6 @@ from .consultas import gerar_sql, preparar_e_validar_sql, executar_sql
 from .database import construir_catalogo, catalogo_para_texto
 
 
-def processar_relatorios(codigo_obra: str, id_contrato: int, diretorio: str = "/content"):
-    """Processa um ou vários PDFs e persiste os dados no banco."""
-    arquivos = [
-        os.path.join(diretorio, f)
-        for f in os.listdir(diretorio)
-        if f.lower().startswith("n") and f.lower().endswith(".pdf")
-    ]
-
-    resultados = []
-    for pdf_path in arquivos:
-        dados = extrair_dados_comprovantes_pdf(pdf_path)
-        if dados:
-            # A persistência final deve receber o contrato e o nome do PDF.
-            salvar_relatorio(dados, id_contrato, os.path.basename(pdf_path))
-            resultados.append(os.path.basename(pdf_path))
-
-    # Mantém a conciliação como etapa posterior do processamento.
-    conciliar_comprovantes_despesas(limiar_similaridade_doc=80)
-    return resultados
-
-
 def main():
 
   ##########################################################################################
@@ -60,6 +39,8 @@ def main():
    print("\n" + "=" * 60)
    print("       SISTEMA DE ANÁLISE DE RELATORIOS DE DESPESAS DE OBRAS")
    print("=" * 60)
+   
+   
 
    while True and not ctl_encerrar:
      #Entrada do código da Obra/Contrato
@@ -67,6 +48,7 @@ def main():
 
      if not codigo_obra:
         print("\n ❌ Nenhum código de obra foi informado.")
+        continue 
      elif codigo_obra == "0":
         print("\n 🏁 Execução Encerrada")
         ctl_encerrar = True

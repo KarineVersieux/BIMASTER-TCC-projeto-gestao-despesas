@@ -8,6 +8,7 @@ from dateutil import parser
 from thefuzz import fuzz
 from google import genai
 from google.genai import types
+import json
 
 from .config import EXTRACT_LLM_MODEL
 from .config import CHAVE_API_GEMINI
@@ -151,8 +152,8 @@ def extrair_dados_comprovantes_pdf(pdf_path: str):
         contents=[pdf, prompt_passo_1],
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
-            response_schema=QuadroResumo,  # Garante estruturação de esquema assistida por tipo
-            temperature=0.0  # Temperatura em zero blinda o modelo contra flutuações numéricas
+            response_schema=QuadroResumo  # Garante estruturação de esquema assistida por tipo
+           
         ),
     )
 
