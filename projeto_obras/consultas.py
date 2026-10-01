@@ -16,23 +16,9 @@ def gerar_sql(pergunta, catalogo_texto, id_contrato):
 
     # Inicialização correta usando o novo SDK padrão 'google-genai' [1]
     client = genai.Client(api_key=CHAVE_API_GEMINI)
-
-    prompt = f""" Você é um especialista em PostgreSQL e análise financeira
-       de prestações de contas de condomínios. Sua tarefa é transformar a pergunta do usuário em SQL.
-
-       IMPORTANTE: Caso a pergunta não seja satisfatória ou precisa, não gerar um SQL aleatório.
-        Solicitar mais informações. retornar SQL = ''
-
-     CATÁLOGO DO BANCO :  {catalogo_texto}
-
-     REGRAS DE NEGÓCIO :  {REGRAS_NEGOCIO_CONSULTA}
-
-     EXEMPLOS DE PERGUNTAS E RESPOSTAS: {EXEMPLOS_CONSULTA}
-
-     PARAMETRO OBRIGATORIO: id_contrato = {id_contrato}
-
-     PERGUNTA ALVO: {pergunta} """
-
+    
+    prompt = f""" Você é um especialista em PostgreSQL e análise financeira de prestações de contas de condomínios. Sua tarefa é transformar a pergunta em linguagem do usuário em SQL no esquema informado. IMPORTANTE: Caso a pergunta não seja satisfatória ou precisa, não gerar um SQL aleatório. Solicitar mais informações. CATÁLOGO DO BANCO :  {catalogo_texto} REGRAS DE NEGÓCIO :  {REGRAS_NEGOCIO_CONSULTA} EXEMPLOS DE PERGUNTAS E RESPOSTAS: {EXEMPLOS_CONSULTA} PARAMETRO OBRIGATORIO: id_contrato = {id_contrato} PERGUNTA ALVO: {pergunta} """
+      
     response = client.models.generate_content(
 
         model=SQL_LLM_MODEL,

@@ -3,9 +3,20 @@
 import psycopg2
 import pandas as pd
 from psycopg2.extras import RealDictCursor
+from supabase import create_client
 
-from .config import DB_CONFIG
-from .config import REGRAS_NEGOCIO_CONSULTA, EXEMPLOS_CONSULTA
+from .config import (
+    DB_CONFIG,
+    SUPABASE_URL,
+    SUPABASE_KEY,
+    REGRAS_NEGOCIO_CONSULTA,
+    EXEMPLOS_CONSULTA
+)
+
+supabase = create_client(
+    SUPABASE_URL,
+    SUPABASE_KEY
+)
 
 def get_connection():
     """Abre uma conexão PostgreSQL usando a configuração local."""

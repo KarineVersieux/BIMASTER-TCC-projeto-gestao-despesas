@@ -11,5 +11,5 @@ python-dateutil
 reportlab
 openai
 sqlalchemy
-
+reportlab
 python-dotenv

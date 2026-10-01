@@ -13,6 +13,11 @@ from reportlab.platypus import (
 )
 from reportlab.pdfgen import canvas
 from reportlab.graphics.shapes import String, Rect
+from reportlab.graphics.shapes import Drawing
+from reportlab.graphics.charts.piecharts import Pie
+from reportlab.graphics.charts.barcharts import VerticalBarChart
+from reportlab.graphics.charts.legends import Legend
+
 
 from .config import DB_CONFIG
 
@@ -371,14 +376,7 @@ def executar_pipeline_relatorio(nome_cliente: str, id_contrato: str, contrato: s
         cursor = conn.cursor()
 
         # Query 1: Registros estruturados da Tabela Despesas Sem Comprovação
-        query_despesas_sem_comprovacao = f"""
-             select r.num_relatorio, d.dta_despesa, d.vlr_despesa,
-             d.des_categoria, d.nome_emitente, d.des_aplicacao, d.numero_nf_recibo
-               from public."Despesa" d, public."Relatorio" r
-              where d.cod_status_comprovacao = 'PENDENTE'
-                and r.id_contrato = {id_contrato}
-           ORDER BY 1,2,3
-        """
+        query_despesas_sem_comprovacao = f""" select r.num_relatorio, d.dta_despesa, d.vlr_despesa, d.des_categoria, d.nome_emitente, d.des_aplicacao, d.numero_nf_recibo from public."Despesa" d, public."Relatorio" r  where d.cod_status_comprovacao = 'PENDENTE'  and r.id_contrato = {id_contrato} ORDER BY 1,2,3  """
 
         cursor.execute(query_despesas_sem_comprovacao)
         registros_tabela_1 = cursor.fetchall()
@@ -388,16 +386,7 @@ def executar_pipeline_relatorio(nome_cliente: str, id_contrato: str, contrato: s
         ]
 
         # Query 2: Registros estruturados da Tabela Comprovantes Não Associados
-        query_comprovantes_sem_despesa = f"""
-             SELECT r.num_relatorio, c.dta_emissao, c.categoria_comprovante,c.valor_total,
-             c.num_documento,c.nome_emitente
-            FROM public."Comprovante Despesa" c, public."Relatorio" r
-            WHERE c.id_relatorio = r.id_relatorio
-            AND r.id_contrato = {id_contrato}
-            AND c.id_comprovante NOT IN (
-                SELECT COALESCE(id_comprovante_despesa,0)
-                FROM public."Despesa");
-        """
+        query_comprovantes_sem_despesa = f"""  SELECT r.num_relatorio, c.dta_emissao, c.categoria_comprovante,c.valor_total, c.num_documento,c.nome_emitente FROM public."Comprovante Despesa" c, public."Relatorio" r WHERE c.id_relatorio = r.id_relatorio AND r.id_contrato = {id_contrato} AND c.id_comprovante NOT IN ( SELECT COALESCE(id_comprovante_despesa,0) FROM public."Despesa"); """
         cursor.execute(query_comprovantes_sem_despesa)
         registros_tabela_2 = cursor.fetchall()
         colunas_tabela_2 = [
@@ -406,14 +395,7 @@ def executar_pipeline_relatorio(nome_cliente: str, id_contrato: str, contrato: s
         ]
 
         # Query 3: Total de Despesas Por Categoria
-        query_despesas_categoria = f"""
-            select d.des_categoria, sum(d.vlr_despesa)
-            from public."Despesa" d, public."Relatorio" r
-            where r.id_relatorio = d.id_relatorio
-            and r.id_contrato = {id_contrato}
-            group by d.des_categoria
-            order by 1
-        """
+        query_despesas_categoria = f""" select d.des_categoria, sum(d.vlr_despesa) from public."Despesa" d, public."Relatorio" r where r.id_relatorio = d.id_relatorio and r.id_contrato = {id_contrato} group by d.des_categoria order by 1 """
         cursor.execute(query_despesas_categoria)
         dados_pizza_brutos = cursor.fetchall()
 
@@ -425,15 +407,7 @@ def executar_pipeline_relatorio(nome_cliente: str, id_contrato: str, contrato: s
         categorias_pizza = [str(row[0]) for row in dados_pizza_brutos]
 
         # Query 4: Dados temporais para o Gráfico de Barras Despesas por Mês
-        query_despesas_mes = f"""
-            select to_char(d.dta_despesa,'YYYY-MM') as ano_mes,
-                   sum(d.vlr_despesa)
-            from public."Despesa" d, public."Relatorio" r
-            where r.id_relatorio = d.id_relatorio
-            and r.id_contrato = {id_contrato}
-            group by ano_mes
-            order by 1
-        """
+        query_despesas_mes = f""" select to_char(d.dta_despesa,'YYYY-MM') as ano_mes, sum(d.vlr_despesa) from public."Despesa" d, public."Relatorio" r where r.id_relatorio = d.id_relatorio and r.id_contrato = {id_contrato} group by ano_mes order by 1 """
         cursor.execute(query_despesas_mes)
 
         dados_barras_brutos = cursor.fetchall()
@@ -449,7 +423,7 @@ def executar_pipeline_relatorio(nome_cliente: str, id_contrato: str, contrato: s
         return
 
     # Processamento e montagem do fluxo do PDF
-    print(f"Compilando documento estruturado em: {caminho_pdf}")
+    print(f"\n Compilando documento estruturado em: {caminho_pdf}")
     relatorio = GeradorRelatorioCompleto(caminho_pdf)
 
     # ==========================================================
