@@ -4,6 +4,7 @@ import psycopg2
 import pandas as pd
 from psycopg2.extras import RealDictCursor
 from supabase import create_client
+from thefuzz import fuzz
 
 from .config import (
     DB_CONFIG,
@@ -12,6 +13,8 @@ from .config import (
     REGRAS_NEGOCIO_CONSULTA,
     EXEMPLOS_CONSULTA
 )
+
+from .processing import converter_para_ymd,normalizar_texto
 
 supabase = create_client(
     SUPABASE_URL,

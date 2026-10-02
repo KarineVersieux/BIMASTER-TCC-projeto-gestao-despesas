@@ -10,9 +10,10 @@ from google import genai
 from google.genai import types
 import json
 
-from .config import EXTRACT_LLM_MODEL
+from .config import EXTRACT_LLM_MODEL, SQL_LLM_MODEL
 from .config import CHAVE_API_GEMINI
 from .models import QuadroResumo
+
 
 def normalizar_texto(texto):
   """Remove espaços extras, pontuações, acentos e converte para minúsculas para limpeza básica."""

@@ -31,7 +31,7 @@ DB_CONFIG = {
 # Modelos
 # -----------------------------------------------------------------------------
 SQL_LLM_MODEL = os.getenv("SQL_LLM_MODEL", "gemini-3.5-flash-lite")
-EXTRACT_LLM_MODEL = os.getenv("EXTRACT_LLM_MODEL", "gemini-3.5-flash")
+EXTRACT_LLM_MODEL = os.getenv("EXTRACT_LLM_MODEL", "gemini-3.5-flash-lite")
 
 # -----------------------------------------------------------------------------
 # Regras de negócio usadas na geração de SQL

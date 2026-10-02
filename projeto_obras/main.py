@@ -10,13 +10,15 @@ import os
 from pathlib import Path
 import io
 import json
-
+from thefuzz import fuzz
 from google.colab import files
+
 from .database import validar_dados_contrato, validar_relatorio_processado, salvar_relatorio, conciliar_comprovantes_despesas
-from .processing import carregar_arquivos, extrair_dados_comprovantes_pdf
+from .processing import carregar_arquivos, extrair_dados_comprovantes_pdf,normalizar_texto
 from .report import executar_pipeline_relatorio
 from .consultas import gerar_sql, preparar_e_validar_sql, executar_sql
 from .database import construir_catalogo, catalogo_para_texto
+
 
 
 def main():
