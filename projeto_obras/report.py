@@ -376,8 +376,7 @@ def executar_pipeline_relatorio(nome_cliente: str, id_contrato: str, contrato: s
         cursor = conn.cursor()
 
         # Query 1: Registros estruturados da Tabela Despesas Sem Comprovação
-        query_despesas_sem_comprovacao = f""" select r.num_relatorio, d.dta_despesa, d.vlr_despesa, d.des_categoria, d.nome_emitente, d.des_aplicacao, d.numero_nf_recibo from public."Despesa" d, public."Relatorio" r  where d.cod_status_comprovacao = 'PENDENTE'  and r.id_contrato = {id_contrato} ORDER BY 1,2,3  """
-
+        query_despesas_sem_comprovacao = f""" select r.num_relatorio, d.dta_despesa, d.vlr_despesa, d.des_categoria, d.nome_emitente, d.des_aplicacao, d.numero_nf_recibo from public."Despesa" d, public."Relatorio" r, Public."Contrato" c  where d.cod_status_comprovacao = 'PENDENTE'  and d.id_relatorio = r.id_relatorio and r.id_contrato = {id_contrato} ORDER BY 1,2,3 """
         cursor.execute(query_despesas_sem_comprovacao)
         registros_tabela_1 = cursor.fetchall()
         colunas_tabela_1 = [
