@@ -1,4 +1,4 @@
-"""Modelos e contratos de dados do sistema."""
+"""Definição de classes utilizadas no projeto"""
 
 from typing import List, Optional, Literal
 from pydantic import BaseModel, Field

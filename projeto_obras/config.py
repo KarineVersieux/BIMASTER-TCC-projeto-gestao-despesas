@@ -30,11 +30,14 @@ DB_CONFIG = {
 # -----------------------------------------------------------------------------
 # Modelos
 # -----------------------------------------------------------------------------
+# Modelo LLM usado para geração de consulta SQL 
 SQL_LLM_MODEL = os.getenv("SQL_LLM_MODEL", "gemini-3.5-flash-lite")
+# Modelo LLM usado para extração de dados dos relatorios PDF 
 EXTRACT_LLM_MODEL = os.getenv("EXTRACT_LLM_MODEL", "gemini-3.5-flash-lite")
 
 # -----------------------------------------------------------------------------
-# Regras de negócio usadas na geração de SQL
+# Regras de negócio usadas na geração de SQL para a consulta a base de dados 
+# relacional
 # -----------------------------------------------------------------------------
 REGRAS_NEGOCIO_CONSULTA = """
 REGRAS DO SISTEMA DE PRESTAÇÃO DE CONTAS DE DESPESAS COM OBRAS

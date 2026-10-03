@@ -281,7 +281,7 @@ def catalogo_para_texto(catalogo):
 
 def validar_dados_contrato(codigo_contrato: str):
     """
-    Verifica se contrato cadastrado, valida o nome do cliente.
+    Verifica se contrato cadastrado e retorna os dados do cliente para validação
     """
     try:
         # Busca o registro na tabela 'contratos'
@@ -470,7 +470,7 @@ def salvar_relatorio(dados_relatorio: dict, id_contrato: int, nome_relatorio: st
         # STEP 4: Confirma a transação inteira se tudo correu bem
         # -------------------------------------------------------------
         conn.commit()
-        print(f"✅ Sucesso! Relatório ", dados_relatorio.get('numero_relatorio')," e todas as suas dependências foram salvos.")
+        print(f"\n✅ Sucesso! Relatório ", dados_relatorio.get('numero_relatorio')," e todas as suas dependências foram salvos.")
         return id_relatorio
 
     except Exception as e:
@@ -479,7 +479,7 @@ def salvar_relatorio(dados_relatorio: dict, id_contrato: int, nome_relatorio: st
         # -------------------------------------------------------------
         if conn:
             conn.rollback()
-        print(f"❌ Erro na inserção. ROLLBACK executado (nada foi salvo no banco). Detalhe: {e}")
+        print(f"\n❌ Erro na inserção. ROLLBACK executado (nada foi salvo no banco). Detalhe: {e}")
         raise e
 
     finally:
@@ -630,7 +630,7 @@ def conciliar_comprovantes_despesas(limiar_similaridade_doc):
         conexao.commit()
   except Exception as e:
     conexao.rollback()
-    print(f"Erro durante o processo de conciliação: {e}")
+    print(f"\nErro durante o processo de conciliação: {e}")
   finally:
     cursor.close()
     conexao.close()

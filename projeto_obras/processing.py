@@ -1,4 +1,4 @@
-"""Processamento dos PDFs e funções auxiliares de normalização."""
+"""Processamento extratção dos dados dos relatórios PDF  funções auxiliares """
 
 import os
 import re
@@ -105,11 +105,12 @@ def extrair_dados_comprovantes_pdf(pdf_path: str):
     Realiza o envio do PDF para a API oficial do Gemini, processa o layout visualmente,
     injeta classificação Zero-Shot e retorna um dicionário estritamente tipado.
     """
-    # Inicialização correta usando o novo SDK padrão 'google-genai' [1]
+    # Inicializa o cliente Gemini 
     client = genai.Client(api_key=CHAVE_API_GEMINI)
+    print(f"\n-> {EXTRACT_LLM_MODEL} para extração dos dados do relatorio PDF (processamento multimodal nativo) ...")
 
     try :
-     #print(f"-> Efetuando upload do arquivo para processamento multimodal nativo: {pdf_path}")
+     
      pdf = client.files.upload(file=pdf_path)
 
     except Exception as e:

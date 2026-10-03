@@ -365,7 +365,7 @@ class GerenciadorArmazenamentoLocal:
 def executar_pipeline_relatorio(nome_cliente: str, id_contrato: str, contrato: str):
     # Instancia gerenciador e gera nome único baseado na data e hora atual
     armazenamento = GerenciadorArmazenamentoLocal(
-        pasta_base="outputs/relatorios_despesas"
+        pasta_base="outputs/Gestão de Despesas/"
     )
     caminho_pdf = armazenamento.gerar_caminho_unico(
         prefixo_nome="consolidado"

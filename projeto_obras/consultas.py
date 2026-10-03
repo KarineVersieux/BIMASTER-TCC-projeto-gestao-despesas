@@ -1,4 +1,9 @@
-"""Consultas em linguagem natural: Gemini -> SQL -> validação -> execução."""
+"""Consultas em linguagem natural: Gemini -> SQL -> validação -> execução.
+Esse código recebe uma pergunta do usuário, fornece ao Gemini o conhecimento necessário sobre o banco e as regras do negócio 
+e solicita que ele transforme a pergunta em um SQL PostgreSQL estruturado e validável,obrigatoriamente considerando o contrato 
+informado.
+
+"""
 
 import re
 import pandas as pd
@@ -14,8 +19,20 @@ from .database import construir_catalogo, catalogo_para_texto
 
 def gerar_sql(pergunta, catalogo_texto, id_contrato):
 
-    # Inicialização correta usando o novo SDK padrão 'google-genai' [1]
+    # Inicializa o cliente do Gemini
     client = genai.Client(api_key=CHAVE_API_GEMINI)
+    print(f"\n-> {SQL_LLM_MODEL} para a geração da consulta...")
+
+    """Para gerar o SQL, o modelo recebe:
+       o catálogo do banco de dados (catalogo_texto);
+       as regras de negócio (REGRAS_NEGOCIO_CONSULTA);
+       exemplos de perguntas e respectivas consultas (EXEMPLOS_CONSULTA);
+       o id_contrato obrigatório;
+       a pergunta feita pelo usuário (pergunta).
+       
+       Retorno :  SQLGerado (SQL gerado;explicação;tabelas utilizadas.
+
+     """  
     
     prompt = f""" Você é um especialista em PostgreSQL e análise financeira de prestações de contas de condomínios. Sua tarefa é transformar a pergunta em linguagem do usuário em SQL no esquema informado. IMPORTANTE: Caso a pergunta não seja satisfatória ou precisa, não gerar um SQL aleatório. Solicitar mais informações. CATÁLOGO DO BANCO :  {catalogo_texto} REGRAS DE NEGÓCIO :  {REGRAS_NEGOCIO_CONSULTA} EXEMPLOS DE PERGUNTAS E RESPOSTAS: {EXEMPLOS_CONSULTA} PARAMETRO OBRIGATORIO: id_contrato = {id_contrato} PERGUNTA ALVO: {pergunta} """
       

@@ -1,9 +1,16 @@
-"""Interface principal do sistema.
+########################################################################
+"""Interface principal
+  Sistema : 
+    A partir de um código obra/contrato informado: 
+    1. Permite o upload de relatórios períodicos de despesas de obras contendo quadro resumo das despesas e comprovantes 
+como notas fiscais, recibos, comprovantes de transferência, orçamentos, etc. Os relatórios apresentam-se no formato PDF. Os comprovantes são anexados como imagens.
+    2. Permite a geração de relatório consolidado de despesas para o contrato 
+    3. Permite a realização de consulta a base de dados relacioal, usando LINGUAGEM NATURAL. 
+    As três operações de negócio ficam explícitas:
+    1 - Processar relatório(s) de despesas"
+    2 - Gerar relatório consolidado"
+    3 - Consultar dados (Use linguagem natural)
 
-As três operações de negócio ficam explícitas:
-1. processar relatórios PDF e persistir;
-2. gerar relatório consolidado;
-3. consultar a base em linguagem natural.
 """
 
 import os
@@ -26,11 +33,14 @@ def main():
   ##########################################################################################
   # FUNÇÃO PRINCIPAL - SISTEMA DE GESTÃO DE RELATÓRIOS DE DESPESAS DE OBRAS
   # OPÇÕES DISPONÍVEIS:
-  #  1 - Processar um ou vários relatórios
-  #  2 - Gerar relatório consolidado
-  #  3 - Fazer perguntas em linguagem natural
+  # 1 - Processar relatório(s) de despesas
+  # 2 - Gerar relatório consolidado"
+  # 3 - Consultar dados (Use LINGUAGEM NATURAL)
   #  0 - Sair
-  # O CÓDIGO DA OBRA DEVE SER INFORMADO CORRETAMENTE
+  # Regras: O código obra/contrato deve estar previamente cadastrado.
+  #         O sistema checa os dados do cliente cadastrato e os dados do cliente informado no relatório 
+  #         A cada execução são processados dados de um unico contrato 
+  
   ##########################################################################################
 
    # 1. Diretório atual do Colab
@@ -62,7 +72,7 @@ def main():
           nome_cliente = contrato[0]["nome_cliente"]
           nome_cliente = nome_cliente.upper()
           id_contrato = contrato[0]["id_contrato"]
-          print(f"⚠️ Serão processados arquivos somente do cliente: {nome_cliente}")
+          print(f"⚠️ Serão processados dados somente do cliente: {nome_cliente}")
           while True:
                #Entrada da opção de processamento
                print("\n Escolha uma opção:")
@@ -82,7 +92,7 @@ def main():
                  print("\n➡️ Processamento dos relatórios selecionados será executado ...")
                  print("\n########################################################################")
 
-                 # Lista e remove os arquivos que atendem ao critério
+                 # Remove relatorios já carregados anteriomente para que não sejm novamente avaliados
                  for arq in os.listdir(diretorio):
                    # Converte o nome para minúsculo para checar 'n' e 'N' ao mesmo tempo
                    if arq.lower().startswith('n') and arq.lower().endswith('.pdf'):
