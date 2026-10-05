@@ -21,7 +21,7 @@ O projeto tem como finalidade o desenvolvimento de um sistema para apoiar a gest
 
 O problema é caracterizado pela necessidade de conferir manualmente os valores dos custos, a taxa de administração, a existência dos documentos comprobatórios e a ocorrência de documentos referentes a períodos anteriores. Também é necessária uma visão consolidada das despesas por período e categoria.
 
-Princípio Central da Solução
+**Princípio Central da Solução**
 
 O projeto desenvolvido em Python, sem interface gráfica, combina LLMs em tarefas que exigem interpretação de documentos para extração de dados e processamento de linguagem natural para a geração de consultas SQL e processos determinísticos para validação, persistência, conciliação e geração de relatórios.
 
@@ -31,8 +31,23 @@ Empresa de engenharia civil, através de relatórios semanais no formato pdf, re
 
 O processo de conferência manual dos custos totais, taxas de administração e validação da emissão de nota fiscal ou outro tipo de comprovante consome tempo e é suscetível a erros. Além disto, comprovantes de despesas de um período, frequentemente, são enviadas anexos ao relatório de períodos posteriores, gerando a necessidade de controle de comprovações pendentes. O cliente possui mais de um contrato com a empresa de engenharia civil. Cada obra dura em média 12 meses, sendo gerados aproximadamente 48 relatórios por obra. 
                                 
-O sistema possui como objetivo automatizando os processos acima citados e fornecer visão consolidada dos custos por períodos e/ou categorias. 
+O sistema possui como objetivo automatizar os processos acima citados e fornecer visão consolidada dos custos por períodos e/ou categorias. 
 
+**Objetivos Específicos:**
+
+ Processar relatórios PDF contendo quadro-resumo de despesas e documentos comprobatórios.
+
+ Extrair informações estruturadas dos documentos.
+
+ Persistir os dados em banco de dados relacional.
+
+ Evitar o reprocessamento de relatórios já cadastrados.
+
+ Associar comprovantes a despesas. 
+
+ Gerar relatório consolidado em PDF.
+
+ Permitir consultas ao banco de dados por meio de linguagem natural.
 
 ### 2. Modelagem
 
