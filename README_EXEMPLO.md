@@ -35,19 +35,19 @@ O sistema possui como objetivo automatizar os processos acima citados e fornecer
 
 **Objetivos Específicos:**
 
- Processar relatórios PDF contendo quadro-resumo de despesas e documentos comprobatórios.
+  * Processar relatórios PDF contendo quadro-resumo de despesas e documentos comprobatórios.
 
- Extrair informações estruturadas dos documentos.
+  * Extrair informações estruturadas dos documentos.
 
- Persistir os dados em banco de dados relacional.
+  * Persistir os dados em banco de dados relacional.
 
- Evitar o reprocessamento de relatórios já cadastrados.
+  * Evitar o reprocessamento de relatórios já cadastrados.
 
- Associar comprovantes a despesas. 
+  * Associar comprovantes a despesas. 
 
- Gerar relatório consolidado em PDF.
+  * Gerar relatório consolidado em PDF.
 
- Permitir consultas ao banco de dados por meio de linguagem natural.
+  * Permitir consultas ao banco de dados por meio de linguagem natural.
 
 ### 2. Modelagem
 
