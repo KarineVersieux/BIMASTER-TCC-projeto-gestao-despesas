@@ -1,3 +1,5 @@
+<div align="justify">
+  
 # Sistema de Consolidação e Consulta de Despesas de Obras
 
 #### Aluno: Karine Versieux Magalhaes
@@ -120,6 +122,8 @@ Assim, conclui-se que o sistema desenvolvido atingiu o propósito de estabelecer
 ---
 
 Matrícula: 231.100.986 Turmas (23.2 e 24.1) 
+
+</div>
 
 Pontifícia Universidade Católica do Rio de Janeiro
 
