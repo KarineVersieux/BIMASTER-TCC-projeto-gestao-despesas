@@ -21,13 +21,13 @@ Trabalho de Conclusão de Curso [BI MASTER - BUSINESS INTELLIGENCE MASTER - SIST
 
 ### Resumo
 
-O projeto tem como finalidade o desenvolvimento de um sistema para apoiar a gestão de relatórios de despesas de obras, automatizando a extração de informações presentes em relatórios períodicos apresentados em formato PDF, a persistência estruturada dos dados, a conciliação entre despesas e comprovantes, a geração de relatórios consolidados e a realização de consultas ao banco de dados relacional por meio de linguagem natural. Os relatórios periódicos de despesas apresentam um quadro-resumo e podem conter imagens de notas fiscais, recibos, orçamentos, comprovantes de transferência e outros documentos relacionados aos gastos.
+O projeto tem como finalidade o desenvolvimento de um sistema para apoiar a gestão de relatórios de despesas de obras de engenharia civil, automatizando a extração de informações presentes em relatórios períodicos apresentados em formato PDF, a persistência estruturada dos dados, a conciliação entre despesas e comprovantes, a geração de relatórios consolidados e a realização de consultas ao banco de dados relacional por meio de linguagem natural. Os relatórios periódicos de despesas apresentam um quadro-resumo e podem conter imagens de notas fiscais, recibos, orçamentos, comprovantes de transferência e outros documentos relacionados aos gastos.
 
 O problema é caracterizado pela necessidade de conferir manualmente os valores dos custos, a taxa de administração, a existência dos documentos comprobatórios e a ocorrência de documentos referentes a períodos anteriores. Também é necessária uma visão consolidada das despesas por período e categoria.
 
 **Princípio Central da Solução**
 
-O projeto desenvolvido em Python, sem interface gráfica, combina LLMs em tarefas que exigem interpretação de documentos para extração de dados e processamento de linguagem natural para a geração de consultas SQL e processos determinísticos para validação, persistência, conciliação e geração de relatórios.
+O projeto desenvolvido em Python, sem interface gráfica, combina LLMs em tarefas que exigem interpretação de documentos para extração de dados e processamento de linguagem natural para a geração de consultas SQL. Inclui também processos determinísticos para validação, persistência, conciliação e geração de relatórios.
 
 ### 1. Introdução
 
