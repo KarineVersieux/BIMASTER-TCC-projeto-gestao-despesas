@@ -55,6 +55,10 @@ A solução desenvolvida está organizada como uma aplicação modular Python. A
 
 A figura apresenta a arquitetura da solução e os fluxos implementados:
 
+<p align="center">
+  <img src="docs/Arquitetura e Fluxos Solucao.png" width="850">
+</p>
+
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
