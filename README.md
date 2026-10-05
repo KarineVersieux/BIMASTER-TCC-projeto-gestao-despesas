@@ -13,7 +13,7 @@
 Trabalho de Conclusão de Curso [BI MASTER - BUSINESS INTELLIGENCE MASTER - SISTEMAS INTELIGENTES DE APOIO À DECISÃO EM NEGÓCIOS](https://ica.ele.puc-rio.br/cursos/mba-bi-master/).
 
 <!-- para os links a seguir, caso os arquivos estejam no mesmo repositório que este README, não há necessidade de incluir o link completo: basta incluir o nome do arquivo, com extensão, que o GitHub completa o link corretamente -->
-- [Link para o código](https://github.com/link_do_repositorio). <!-- caso não aplicável, remover esta linha -->
+- [Link para o código](https://github.com/link_do_repositorio)
 
 - [Link para a monografia](https://link_da_monografia.com). <!-- caso não aplicável, remover esta linha -->
 
