@@ -51,6 +51,12 @@ O sistema possui como objetivo automatizar os processos acima citados e fornecer
 
 ### 2. Modelagem
 
+A solução desenvolvida está organizada como uma aplicação modular Python. A função principal apresenta ao usuário três operações de negócio: processamento de relatórios, geração de relatório consolidado e consulta de dados em linguagem natural. A execução é orientada por um código de obra/contrato, informado pelo usuário, que identifica o cliente e restringe quais informações devem ser processadas e apresentadas. 
+
+A figura apresenta a arquitetura da solução e os fluxos implementados:
+
+
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
 
 Proin feugiat nulla sem. Phasellus consequat tellus a ex aliquet, quis convallis turpis blandit. Quisque auctor condimentum justo vitae pulvinar. Donec in dictum purus. Vivamus vitae aliquam ligula, at suscipit ipsum. Quisque in dolor auctor tortor facilisis maximus. Donec dapibus leo sed tincidunt aliquam.
