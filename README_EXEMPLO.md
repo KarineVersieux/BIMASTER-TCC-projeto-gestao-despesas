@@ -72,17 +72,20 @@ As principais decisões de implementação são:
 
 **Extração de dados de arquivos PDF: LLM Multimodal**
 
-A solução adotada utiliza um LLM com capacidade multimodal para interpretar diretamente os arquivos PDF dos relatórios de despesas. O modelo recebe o documento completo, incluindo textos, tabelas e imagens dos comprovantes, e realiza a extração das informações relevantes para o sistema.  A escolha dessa abordagem deve-se ao fato dos relatórios não serem constituídos apenas por texto estruturado. Eles contêm quadro-resumo, tabelas e imagens de notas fiscais, recibos, comprovantes de transferência, Pix e outros documentos, exigindo interpretação conjunta de diferentes elementos do PDF. O LLM não realiza cálculos ou consitência entre os diversos relatórios. As operações determinísticas ficam sob controle da aplicação. 
+A solução adotada utiliza um LLM com capacidade multimodal para interpretar diretamente os arquivos PDF dos relatórios de despesas. O modelo recebe o documento completo, incluindo textos, tabelas e imagens dos comprovantes, e realiza a extração das informações relevantes para o sistema.  A escolha dessa abordagem deve-se ao fato dos relatórios não serem constituídos apenas por texto estruturado. Eles contêm quadro-resumo, tabelas e imagens de notas fiscais, recibos, comprovantes de transferência, Pix e outros documentos, exigindo interpretação conjunta de diferentes elementos do PDF. O LLM não realiza cálculos ou consistência entre os dados dos diversos relatórios. As operações determinísticas ficam sob controle da aplicação. 
 
 Na geração de saída do modelo, foi definido um esquema estruturado baseado em Pydantic o que reduz a necessidade de interpretar posteriormente uma resposta textual livre e estabelece um contrato de dados entre o modelo de linguagem e a aplicação Python. 
 
-
-
+Os dados extraídos são armazenados em um banco de dados relacional Postgress armazenado na palataforma open-sourec Supabase.
 
 **Consultas em linguagem natural — Text-to-SQL**
 
+A solução implementada permite que o usuário consulte os dados armazenados no banco de dados utilizando linguagem natural, sem necessidade de conhecer a estrutura ou escrever diretamente comandos SQL. O processo utiliza um LLM para transformação de linguagem natural em SQL (Text-to-SQL), entretanto, a geração da consulta não ocorre de forma livre: o modelo recebe informações estruturadas sobre o banco, regras de negócio, exemplos de consultas e o identificador do contrato selecionado. O sistema constrói automaticamente um catálogo do banco de dados a partir do PostgreSQL. 
+
+a execução produz uma estrutura SQL que passa por uma segunda camada de validação antes da execução com o objetivo de validar que somente expressões de consultas são geradas, impedindo a execução de comandos não desejados como remoção de dados, alteração de estruturas de tabelas e etc.  
 
 
+verificar 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
 
 Proin feugiat nulla sem. Phasellus consequat tellus a ex aliquet, quis convallis turpis blandit. Quisque auctor condimentum justo vitae pulvinar. Donec in dictum purus. Vivamus vitae aliquam ligula, at suscipit ipsum. Quisque in dolor auctor tortor facilisis maximus. Donec dapibus leo sed tincidunt aliquam.
