@@ -14,9 +14,9 @@ Trabalho de Conclusão de Curso [BI MASTER - BUSINESS INTELLIGENCE MASTER - SIST
 
 - Código Disponível na pasta /projeto_obras
 
-- Documentação Disponível na pasta /docs
+- Documentação Disponível na /pasta docs
 
-- - Exemplos de relatórios de entrada e saída disponiveis na psta: /exemplos
+- Exemplos de relatórios de entrada e saída disponiveis na pasta /exemplos
 
 ---
 
