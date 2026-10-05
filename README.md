@@ -78,7 +78,7 @@ As principais decisões de implementação são:
 
 A solução adotada utiliza um LLM com capacidade multimodal para interpretar diretamente os arquivos PDF dos relatórios de despesas. O modelo recebe o documento completo, incluindo textos, tabelas e imagens dos comprovantes, e realiza a extração das informações relevantes para o sistema.  A escolha dessa abordagem deve-se ao fato dos relatórios não serem constituídos apenas por texto estruturado. Eles contêm quadro-resumo, tabelas e imagens de notas fiscais, recibos, comprovantes de transferência, Pix e outros documentos, exigindo interpretação conjunta de diferentes elementos do PDF. O LLM não realiza cálculos ou consistência entre os dados dos diversos relatórios. As operações determinísticas ficam sob controle da aplicação. 
 
-Na geração de saída do modelo, foi definido um esquema estruturado baseado em Pydantic o que reduz a necessidade de interpretar posteriormente uma resposta textual livre e estabelece um contrato de dados entre o modelo de linguagem e a aplicação Python. 
+Na geração de saída do modelo foi definido um esquema estruturado baseado em Pydantic o que reduz a necessidade de interpretar posteriormente uma resposta textual livre e estabelece um contrato de dados entre o modelo de linguagem e a aplicação Python. 
 
 Os dados extraídos são armazenados em um banco de dados relacional Postgress armazenado na palataforma open-sourec Supabase.
 
