@@ -59,6 +59,23 @@ A figura apresenta a arquitetura da solução e os fluxos implementados:
   <img src="docs/Arquitetura e Fluxos Solucao.png" width="850">
 </p>
 
+**Módulos Desenvolvidos:**
+* main.py: Interface principal, seleção do contrato e orquestração das três opções de uso.
+* config.py: Variáveis de ambiente, credenciais, modelos LLM, regras de negócio e exemplos.
+* processing.py: Processamento dos PDFs, normalização de textos e datas e extração via LLM.
+* models.py: Modelos Pydantic para representar dados extraídos e respostas estruturadas do LLM.
+* database.py: Conexão, catálogo do banco, persistência, validações e conciliação.
+* consultas.py: Geração de SQL via LLM, validação e execução no PostgreSQL.
+* report.py: Construção do relatório consolidado em PDF e geração de gráficos.
+
+As principais decisões de implementação são:
+
+**Extração de dados de arquivos PDF: LLM Multimodal**
+
+A solução adotada utiliza um LLM com capacidade multimodal para interpretar diretamente os arquivos PDF dos relatórios de despesas. O modelo recebe o documento completo, incluindo textos, tabelas e imagens dos comprovantes, e realiza a extração das informações relevantes para o sistema.  A escolha dessa abordagem deve-se ao fato dos relatórios não serem constituídos apenas por texto estruturado. Eles contêm quadro-resumo, tabelas e imagens de notas fiscais, recibos, comprovantes de transferência, Pix e outros documentos, exigindo interpretação conjunta de diferentes elementos do PDF. Para a geração da saída, foi definido um esquema estruturado baseado em Pydantic o que reduz a necessidade de interpretar posteriormente uma resposta textual livre e estabelece um contrato de dados entre o modelo de linguagem e a aplicação Python. O prompt apresenta regras para normalizar e interpretar os dados e orienta uma classificação zero-shot dos itens de despesa do quadro-resumo, isto é, realiza classificação sem treinamento específico adicional.
+
+**Consultas em linguagem natural — Text-to-SQL**
+
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
