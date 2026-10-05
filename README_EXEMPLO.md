@@ -1,7 +1,9 @@
 # Sistema de Consolidação e Consulta de Despesas de Obras
 
-#### Aluno: [Karine Versieux Magalhaes](https://github.com/link_do_github)
-#### Orientador: [Nome Sobrenome](https://github.com/link_do_github).
+#### Aluno: Karine Versieux Magalhaes
+#### Matrícula: 231.100.986 Turmas (23.2 e 24.1)
+
+#### Orientador: Leonardo Alfredo Forero Mendoza
 
 
 ---
