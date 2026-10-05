@@ -1,4 +1,3 @@
-<!-- antes  de enviar a versão final, solicitamos que todos os comentários, colocados para orientação ao aluno, sejam removidos do arquivo -->
 # Sistema de Consolidação e Consulta de Despesas de Obras
 
 #### Aluno: [Karine Versieux Magalhaes](https://github.com/link_do_github)
@@ -28,9 +27,12 @@ O projeto desenvolvido em Python, sem interface gráfica, combina LLMs em tarefa
 
 ### 1. Introdução
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
+Empresa de engenharia civil, através de relatórios semanais no formato pdf, realiza comprovação de custos com aquisição de materiais e contratação de serviços para que o cliente faça o reembolso dos valores pagos pela empresa e também do pagamento da taxa de administração, percentual de 15%, sobre todos os custos do período. Cada relatório é composto por um quadro resumo e imagens digitalizadas de notas fiscais, recibos, orçamentos, comprovantes de transferência e outros documentos relacionados ap pagamento das despesas.
 
-Proin feugiat nulla sem. Phasellus consequat tellus a ex aliquet, quis convallis turpis blandit. Quisque auctor condimentum justo vitae pulvinar. Donec in dictum purus. Vivamus vitae aliquam ligula, at suscipit ipsum. Quisque in dolor auctor tortor facilisis maximus. Donec dapibus leo sed tincidunt aliquam.
+O processo de conferência manual dos custos totais, taxas de administração e validação da emissão de nota fiscal ou outro tipo de comprovante consome tempo e é suscetível a erros. Além disto, comprovantes de despesas de um período, frequentemente, são enviadas anexos ao relatório de períodos posteriores, gerando a necessidade de controle de comprovações pendentes. O cliente possui mais de um contrato com a empresa de engenharia civil. Cada obra dura em média 12 meses, sendo gerados aproximadamente 48 relatórios por obra. 
+                                
+O sistema possui como objetivo automatizando os processos acima citados e fornecer visão consolidada dos custos por períodos e/ou categorias. 
+
 
 ### 2. Modelagem
 
