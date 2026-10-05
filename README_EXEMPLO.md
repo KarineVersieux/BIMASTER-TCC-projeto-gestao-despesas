@@ -84,6 +84,9 @@ A solução implementada permite que o usuário consulte os dados armazenados no
 
 A execução produz uma estrutura SQL que passa por uma segunda camada de validação antes da execução com o objetivo de validar que somente expressões de consultas são geradas, impedindo a execução de comandos não desejados como remoção de dados, alteração de estruturas de tabelas e etc.  
 
+**Independência em relação ao modelo:**
+
+Uma decisão arquitetural importante foi manter o modelo utilizado como parâmetro de configuração, por meio das variáveis EXTRACT_LLM_MODEL e SQL_LLM_MODEL.
 
 ### 3. Resultados
 
