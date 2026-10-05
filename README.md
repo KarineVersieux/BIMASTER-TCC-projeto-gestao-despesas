@@ -80,7 +80,7 @@ A solução adotada utiliza um LLM com capacidade multimodal para interpretar di
 
 Na geração de saída do modelo foi definido um esquema estruturado baseado em Pydantic o que reduz a necessidade de interpretar posteriormente uma resposta textual livre e estabelece um contrato de dados entre o modelo de linguagem e a aplicação Python. 
 
-Os dados extraídos são armazenados em um banco de dados relacional Postgress armazenado na plataforma open-sourec Supabase.
+Os dados extraídos são armazenados em um banco de dados relacional Postgress armazenado na plataforma open-source Supabase.
 
 **Consultas em linguagem natural — Text-to-SQL**
 
@@ -94,7 +94,7 @@ Uma decisão arquitetural importante foi manter o modelo utilizado como parâmet
 
 **Geração de relatório consolidado:**
 
-Para a geração automática de relatório consolidado,  a partir dos dados armazenados no banco de dados, optou-se pela definição prévia de estrutura e formatação em PDF. Esta decisão permite que as informações consolidadas sejam apresentadas diretamente ao usuário em uma saída adequada para análise e conferência, reduzindo a necessidade de manipulação manual dos dados após o processamento.
+Para a geração automática de relatório consolidado, a partir dos dados armazenados no banco de dados, optou-se pela definição prévia de estrutura e formatação em PDF. Esta decisão permite que as informações consolidadas sejam apresentadas diretamente ao usuário em uma saída adequada para análise e conferência, reduzindo a necessidade de manipulação manual dos dados após o processamento.
 
 ### 3. Resultados
 
