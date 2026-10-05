@@ -80,7 +80,7 @@ A solução adotada utiliza um LLM com capacidade multimodal para interpretar di
 
 Na geração de saída do modelo foi definido um esquema estruturado baseado em Pydantic o que reduz a necessidade de interpretar posteriormente uma resposta textual livre e estabelece um contrato de dados entre o modelo de linguagem e a aplicação Python. 
 
-Os dados extraídos são armazenados em um banco de dados relacional Postgress armazenado na palataforma open-sourec Supabase.
+Os dados extraídos são armazenados em um banco de dados relacional Postgress armazenado na plataforma open-sourec Supabase.
 
 **Consultas em linguagem natural — Text-to-SQL**
 
