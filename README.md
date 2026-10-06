@@ -12,17 +12,16 @@
 
 Trabalho de Conclusão de Curso [BI MASTER - BUSINESS INTELLIGENCE MASTER - SISTEMAS INTELIGENTES DE APOIO À DECISÃO EM NEGÓCIOS](https://ica.ele.puc-rio.br/cursos/mba-bi-master/).
 
-- Código Disponível na pasta /projeto_obras
-
-- Documentação Disponível na /pasta docs
-
-- Exemplos de relatórios de entrada e saída disponiveis na pasta /exemplos
+- Estrutura de pastas GitHUB:
+  ##### Código: /projeto_obras
+  ##### Documentação: /docs
+  #####  Exemplos de relatórios de entrada e saída disponiveis: /exemplos
 
 ---
 
 ### Resumo
 
-O projeto tem como finalidade o desenvolvimento de um sistema para apoiar a gestão de relatórios de despesas de obras de engenharia civil, automatizando a extração de informações presentes em relatórios períodicos apresentados em formato PDF, a persistência estruturada dos dados, a conciliação entre despesas e comprovantes, a geração de relatórios consolidados e a realização de consultas ao banco de dados relacional por meio de linguagem natural. Os relatórios periódicos de despesas apresentam um quadro-resumo e podem conter imagens de notas fiscais, recibos, orçamentos, comprovantes de transferência e outros documentos relacionados aos gastos.
+O projeto tem como finalidade o desenvolvimento de um sistema para apoiar a gestão de relatórios de despesas de obras de engenharia civil, automatizando a extração informações, a persistência estruturada dos dados, a conciliação entre despesas e comprovantes, a geração de relatórios consolidados e a realização de consultas ao banco de dados relacional por meio de linguagem natural. Os relatórios periódicos, que são entradas para o sistema, apresentam um quadro-resumo e podem conter imagens de notas fiscais, recibos, orçamentos, comprovantes de transferência e outros documentos relacionados aos gastos.
 
 O problema é caracterizado pela necessidade de conferir manualmente os valores dos custos, a taxa de administração, a existência dos documentos comprobatórios e a ocorrência de documentos referentes a períodos anteriores. Também é necessária uma visão consolidada das despesas por período e categoria.
 
