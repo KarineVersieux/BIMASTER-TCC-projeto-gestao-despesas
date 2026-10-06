@@ -80,13 +80,13 @@ A solução adotada utiliza um LLM com capacidade multimodal para interpretar di
 
 Na geração de saída do modelo foi definido um esquema estruturado baseado em Pydantic o que reduz a necessidade de interpretar posteriormente uma resposta textual livre e estabelece um contrato de dados entre o modelo de linguagem e a aplicação Python. 
 
-Os dados extraídos são armazenados em um banco de dados relacional Postgres, na plataforma open-source Supabase.
+Os dados extraídos são armazenados em um banco de dados relacional PostgreSQL, na plataforma open-source Supabase.
 
 **Consultas em linguagem natural — Text-to-SQL**
 
 A solução implementada permite que o usuário consulte os dados armazenados no banco de dados utilizando linguagem natural, sem necessidade de conhecer a estrutura ou escrever diretamente comandos SQL. O processo utiliza um LLM para transformação de linguagem natural em SQL (Text-to-SQL), entretanto, a geração da consulta não ocorre de forma livre: o modelo recebe informações estruturadas sobre o banco, regras de negócio, exemplos de consultas e o identificador do contrato selecionado. O sistema constrói automaticamente um catálogo do banco de dados a partir do PostgreSQL. Em relação aos exemplos são apresentadas perguntas e respectivas consultas SQL, funcionando como referências para orientar o modelo na geração de novas consultas.
 
-A execução produz uma estrutura SQL que passa por uma segunda camada de validação antes da execução. O objetivo de garantir que somente expressões de consultas (SELECT) são geradas, impedindo a execução de comandos não desejados como remoção de dados, alteração de estruturas de tabelas e etc.  
+A execução produz uma estrutura SQL que passa por uma segunda camada de validação antes da execução. O objetivo é garantir que somente expressões de consultas (SELECT) são geradas, impedindo a execução de comandos não desejados como remoção de dados, alteração de estruturas de tabelas e etc.  
 
 **Independência em relação ao modelo:**
 
