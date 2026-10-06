@@ -102,7 +102,7 @@ A implementação do sistema permitiu avaliar, na prática, a utilização de mo
 
 Foram utilizados, como dados de entrada para os testes, 26 relatórios semanais de despesas, permitindo avaliar o processamento de documentos reais dentro do escopo definido para o sistema. Em todos os relatórios processados, as informações necessárias foram extraídas e estruturadas de acordo com o formato estabelecido nos modelos de dados da aplicação, demonstrando a adequação da solução para a etapa de interpretação e estruturação dos documentos.
 
-Para avaliar a funcionalidade de consultas em linguagem natural, foram testadas 20 consultas SQL, abrangendo situações que envolvem tanto dados provenientes de uma única tabela quanto consultas que requerem o relacionamento entre múltiplas tabelas do banco de dados. Os resultados demonstraram desempenho satisfatório na tradução dos termos utilizados nas perguntas para os elementos correspondentes da estrutura relacional, incluindo a identificação das tabelas, campos e relacionamentos necessários para a elaboração das consultas.
+Para avaliar a funcionalidade de consultas em linguagem natural, foram testadas 20 perguntas em linguagem natural, abrangendo situações que envolvem tanto dados provenientes de uma única tabela quanto consultas que requerem o relacionamento entre múltiplas tabelas do banco de dados. Os resultados demonstraram desempenho satisfatório na tradução dos termos utilizados nas perguntas para os elementos correspondentes da estrutura relacional, incluindo a identificação das tabelas, campos e relacionamentos necessários para a elaboração das consultas.
 
 ### 4. Conclusões
 
