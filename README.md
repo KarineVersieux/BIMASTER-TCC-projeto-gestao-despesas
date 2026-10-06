@@ -23,7 +23,7 @@ Trabalho de Conclusão de Curso [BI MASTER - BUSINESS INTELLIGENCE MASTER - SIST
 
 O projeto tem como finalidade o desenvolvimento de um sistema para apoiar a gestão de relatórios de despesas de obras de engenharia civil, automatizando a extração informações, a persistência estruturada dos dados, a conciliação entre despesas e comprovantes, a geração de relatórios consolidados e a realização de consultas ao banco de dados relacional por meio de linguagem natural. Os relatórios periódicos, que são entradas para o sistema, apresentam um quadro-resumo e podem conter imagens de notas fiscais, recibos, orçamentos, comprovantes de transferência e outros documentos relacionados aos gastos.
 
-A motivação para o desenvolvimento da solução decorre da necessidade de conferir manualmente os valores das despesas, taxas de administração, a correpondência entre despesas e respectivos documentos comprobatórios, que normalmente são apresentatos em relatórios posteriores ao lançamento das despesas. Além disso, identificou-se a necessidade de disponibilizar uma visão consolidada das despesas, organizada por período e categoria
+A motivação para o desenvolvimento da solução decorre da necessidade de conferir manualmente os valores das despesas, taxas de administração, a correpondência entre despesas e respectivos documentos comprobatórios, que normalmente são apresentatos em relatórios posteriores ao lançamento das despesas. Além disso, identificou-se a necessidade de disponibilizar uma visão consolidada de todos os períodos.
 
 **Princípio Central da Solução**
 
